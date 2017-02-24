@@ -20,7 +20,6 @@
 [Bb]uild/
 intermediate/
 bld/
-[Bb]in/
 [Oo]bj/
 
 # Visual Studio 2015 cache/options directory
@@ -45,6 +44,8 @@ dlldata.c
 project.lock.json
 artifacts/
 
+*.iobj
+*.ipdb
 *_i.c
 *_p.c
 *_i.h
