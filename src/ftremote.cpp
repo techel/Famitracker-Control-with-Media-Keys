@@ -20,7 +20,7 @@ static std::vector<HWND> enumHandles()
 		title.resize(256);
 		GetWindowTextA(hWnd, &title[0], title.size());
 
-		//find heuristically
+		//heuristically determine famitracker windows
 		if(title.find("FamiTracker") != title.npos && title.find("[#") != title.npos)
 		{
 			auto *r = (std::vector<HWND>*)lParam;
@@ -46,7 +46,7 @@ static void broadcastMessage(UINT msg, WPARAM wParam, LPARAM lParam)
 	postMessage(handles, msg, wParam, lParam);
 }
 
-//copied straight from resource.h
+//straight from FamiTracker's resource.h
 constexpr unsigned int ID_TRACKER_PLAY_START = 138;
 constexpr unsigned int ID_TRACKER_TOGGLE_PLAY = 136;
 constexpr unsigned int ID_TRACKER_STOP = 32776;

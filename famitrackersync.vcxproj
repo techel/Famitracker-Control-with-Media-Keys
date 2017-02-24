@@ -18,6 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ftremote.cpp" />
+    <ClCompile Include="src\hotkey.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ftremote.hpp" />
+    <ClInclude Include="src\hotkey.hpp" />
+    <ClInclude Include="src\ticket.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6C391D90-67D4-4254-9FC3-5096F3715716}</ProjectGuid>
     <RootNamespace>famitrackersync</RootNamespace>
@@ -71,6 +81,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>intermediate\debug\</IntDir>
+    <TargetName>ftmediactrl.d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>intermediate\release\</IntDir>
+    <TargetName>ftmediactrl.r</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -117,16 +135,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ftremote.cpp" />
-    <ClCompile Include="hotkey.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ftremote.hpp" />
-    <ClInclude Include="hotkey.hpp" />
-    <ClInclude Include="ticket.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
